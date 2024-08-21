@@ -7,14 +7,14 @@ const quotesschema = new mongoose.Schema(
       required: true,
     },
     tag: {
-      type: [String],
+      type: String,
       required: true,
     },
   },
 
   {
     timestamps: true,
-  }
+  },
 );
 
 const quotesmodal =

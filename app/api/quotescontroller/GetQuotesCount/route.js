@@ -1,19 +1,16 @@
 import ConnectDb from "@/app/api/db";
 import quotesmodal from "@/app/api/modals/quotesschema";
 
-export async function GET(req, { params }) {
+export async function GET(req) {
   try {
     await ConnectDb();
-
-    let { page } = params;
-    let skipcount = (page - 1) * 4;
-    const response = await quotesmodal.find().limit(4).skip(skipcount);
-    if (response && response.length > 0) {
+    const QuotesCount = await quotesmodal.countDocuments();
+    if (QuotesCount) {
       return new Response(
         JSON.stringify({
+          QuotesCount,
           success: true,
-          message: "Fetched quotes successfully",
-          response,
+          message: "fetched documents successfully",
         }),
         {
           status: 200,
@@ -24,7 +21,7 @@ export async function GET(req, { params }) {
       return new Response(
         JSON.stringify({
           success: false,
-          message: "No quotes found",
+          message: "no quotes found",
         }),
         {
           status: 200,
@@ -33,13 +30,15 @@ export async function GET(req, { params }) {
       );
     }
   } catch (error) {
-    console.log(error);
     return new Response(
       JSON.stringify({
         success: false,
-        message: "Error fetching quotes",
+        message: "Cannot fetch documents",
       }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
+      {
+        status: 500,
+        headers: { "Content-Type": "application/json" },
+      }
     );
   }
 }

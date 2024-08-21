@@ -15,7 +15,7 @@ export async function DELETE(req, { params }) {
         {
           status: 400,
           headers: { "Content-Type": "application/json" },
-        }
+        },
       );
     }
 
@@ -29,7 +29,7 @@ export async function DELETE(req, { params }) {
         {
           status: 200,
           headers: { "Content-Type": "application/json" },
-        }
+        },
       );
     } else {
       return new Response(
@@ -40,7 +40,7 @@ export async function DELETE(req, { params }) {
         {
           status: 404,
           headers: { "Content-Type": "application/json" },
-        }
+        },
       );
     }
   } catch (error) {
@@ -53,7 +53,7 @@ export async function DELETE(req, { params }) {
       {
         status: 500,
         headers: { "Content-Type": "application/json" },
-      }
+      },
     );
   }
 }

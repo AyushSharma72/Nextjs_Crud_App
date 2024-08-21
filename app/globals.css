@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "../dist/output.css";
 
 body {
   background-color: black;
@@ -11,8 +9,11 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.navbar{
-    
-    /* background: linear-gradient(220.55deg, #7CF7FF 0%, #4B73FF 100%); */
-    background: linear-gradient(220.55deg, #3793FF 0%, #0017E4 100%);
+.navbar {
+  background: linear-gradient(220.55deg, #3793ff 0%, #0017e4 100%);
+}
+
+.addbtn {
+  color: white;
+  background-color: blue;
 }

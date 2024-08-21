@@ -15,7 +15,7 @@ export async function POST(req, { params }) {
         {
           status: 400,
           headers: { "Content-Type": "application/json" },
-        }
+        },
       );
     }
 
@@ -29,7 +29,7 @@ export async function POST(req, { params }) {
       },
       {
         new: true,
-      }
+      },
     );
 
     if (response) {
@@ -42,7 +42,7 @@ export async function POST(req, { params }) {
         {
           status: 200,
           headers: { "Content-Type": "application/json" },
-        }
+        },
       );
     } else {
       return new Response(
@@ -53,7 +53,7 @@ export async function POST(req, { params }) {
         {
           status: 500,
           headers: { "Content-Type": "application/json" },
-        }
+        },
       );
     }
   } catch (error) {
@@ -66,7 +66,7 @@ export async function POST(req, { params }) {
       {
         status: 500,
         headers: { "Content-Type": "application/json" },
-      }
+      },
     );
   }
 }

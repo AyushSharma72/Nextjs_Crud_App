@@ -29,11 +29,11 @@ const Create = () => {
   }
 
   return (
-    <main className="w-1/2 m-auto mt-10">
-      <div className="flex flex-col w-full gap-y-3 justify-start">
+    <main className="w-1/2 m-auto mt-10 flex items-center  h-[450px]">
+      <div className="flex flex-col w-full gap-y-10 justify-center items-center ">
         <textarea
           placeholder="Enter Quote"
-          className="rounded-md text-black p-2"
+          className="rounded-md text-black p-2 w-full h-[120px] resize-none"
           onChange={(e) => setQuote(e.target.value)}
           value={quote}
         ></textarea>
@@ -46,7 +46,7 @@ const Create = () => {
         ></input>
 
         <button
-          className="addbtn w-[10%] m-auto rounded-md p-2"
+          className="addbtn w-[10%]  rounded-md p-2"
           onClick={handleCreateQuote}
         >
           Post

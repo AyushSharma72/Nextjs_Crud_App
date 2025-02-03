@@ -2,7 +2,6 @@
 import Link from "next/link";
 import React from "react";
 import { usePathname } from "next/navigation";
-
 import { TbBrandNextjs } from "react-icons/tb";
 import { FaPlusCircle } from "react-icons/fa";
 
@@ -10,7 +9,7 @@ const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <div className="flex w-[60%] justify-between m-auto p-3 navbar  rounded">
+    <div className="flex w-[90%] sm:w-3/4 lg:w-1/2  justify-between m-auto p-3 navbar  rounded">
       <TbBrandNextjs className="text-3xl" />
 
       {
@@ -25,6 +24,7 @@ const Navbar = () => {
           >
             Home
           </Link>
+          
           <Link href="/create">
             {" "}
             <div
@@ -34,7 +34,7 @@ const Navbar = () => {
                   : "bg-white text-black hover:bg-black hover:text-white"
               }`}
             >
-              Create
+              Create task
               <FaPlusCircle />
             </div>
           </Link>

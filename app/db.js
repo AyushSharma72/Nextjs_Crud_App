@@ -9,7 +9,7 @@ async function ConnectDb() {
       console.log("Already connected to database");
       return;
     } else {
-      await mongoose.connect(process.env.Mongo, {
+      await mongoose.connect(process.env.Mongo_Db_Url, {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       });
